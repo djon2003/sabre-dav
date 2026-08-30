@@ -11,7 +11,11 @@ function executeTests()
     mkdir -p vendor/sabre/http/tests/www
     php -S localhost:8000 -t vendor/sabre/http/tests/www &
     
-    composer phpunit
+    if [ "$TEST_METHOD_FILTER" != "" ]; then
+      composer exec -- phpunit --filter $TEST_METHOD_FILTER "$src"
+    else
+      composer phpunit
+    fi
   )
 }
 

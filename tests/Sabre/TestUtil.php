@@ -6,7 +6,7 @@ namespace Sabre;
 
 class TestUtil
 {
-    public const SABRE_TEMPDIR = __DIR__.'/../temp/';
+    public const SABRE_TEMPDIR = __DIR__.'/../temp';
 
     /**
      * This function deletes all the contents of the temporary directory.
